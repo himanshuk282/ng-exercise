@@ -61,7 +61,7 @@
     </div>
 </div>
 <!-- Communication between parent and child -->
-<div class="container">
+<div class="container d-none">
     <h3>Parent Component</h3>
     <div class="row">
         <div class="col">
@@ -80,4 +80,21 @@
         </div>
     </div>
     <app-child [messageForChild]="parentData.value" (sendParent)="childSays($event)"></app-child>
+</div>
+<!-- Content projection with ng-content -->
+<div class="container bg-warning p-2 text-dark bg-opacity-10 my-3">
+  <div class="row">
+    <div class="col">
+      Parent Element
+      <app-child>
+        <div class="container bg-success p-2 text-dark bg-opacity-50">
+          <div class="row">
+            <div class="col">
+              This is an example of content projection. As it is written in parent and shown in child component.
+            </div>
+          </div>
+        </div>
+      </app-child>
+    </div>
+  </div>
 </div>
