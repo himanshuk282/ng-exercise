@@ -1,0 +1,18 @@
+<h4>Child Component</h4>
+<div class="row">
+    <div class="col">
+        <div class="input-group mb-3">
+            <span class="input-group-text">Send To Parent</span>
+            <input type="text" class="form-control" placeholder="Data for parent" #dataForParent>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="input-group mb-3">
+                <span class="input-group-text">Message from parent</span>
+                <input type="text" class="form-control" [(ngModel)]="fromParent">
+            </div>
+        </div>
+</div>
+<button class="btn btn-primary btn-sm" (click)="informParent(dataForParent.value)">Send</button>

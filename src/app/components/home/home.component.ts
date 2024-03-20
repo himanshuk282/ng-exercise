@@ -1,10 +1,11 @@
 import { Component, ElementRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ChildComponent } from '../child/child.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,ChildComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -19,4 +20,8 @@ export class HomeComponent {
     alert("The user has clicked "+initiator+" the button!");
   }
   username:string = "Default Value";
+  messageFromChild:string = "";
+  childSays(message:string){
+    this.messageFromChild = message;
+  }
 }

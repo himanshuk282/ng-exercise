@@ -1,4 +1,5 @@
-<div class="container my-2">
+<!-- Data binding code -->
+<div class="container my-2 d-none">
     <div class="row mb-1">
         <div class="col">
             <div class="card">
@@ -58,4 +59,25 @@
               </div>
         </div>
     </div>
+</div>
+<!-- Communication between parent and child -->
+<div class="container">
+    <h3>Parent Component</h3>
+    <div class="row">
+        <div class="col">
+            <div class="input-group mb-3">
+                <span class="input-group-text">Send to child</span>
+                <input type="text" class="form-control" placeholder="Data for child" #parentData>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="input-group mb-3">
+                <span class="input-group-text">Message from child</span>
+                <input type="text" class="form-control" [(ngModel)]="messageFromChild">
+            </div>
+        </div>
+    </div>
+    <app-child [messageForChild]="parentData.value" (sendParent)="childSays($event)"></app-child>
 </div>
