@@ -5,5 +5,5 @@
 4) Exercise: Demonstrate parent-child and child-parent interactions.
 5) Exercise: Demonstrate content projection with ng-content.
 6) Exercise: Demonstrate directives structural and attribute with renderer2,host listener,and host binding.
-
+7) Exercise: Demonstrate ngIf and ngFor together with practical example.
 Commits correspond to each exercises

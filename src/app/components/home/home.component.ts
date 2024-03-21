@@ -11,5 +11,21 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  bgColor:string = "#000000"
+  applicationUsers:{name:string,age:number,isIndian:boolean}[] = [
+    {
+      name:"Himanshu",
+      age:25,
+      isIndian:true
+    },
+    {
+      name:"Ahmad",
+      age:25,
+      isIndian:true
+    },
+    {
+      name:"Amanda",
+      age:42,
+      isIndian:false
+    }
+  ];
 }

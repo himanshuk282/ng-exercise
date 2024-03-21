@@ -12,5 +12,5 @@ import { UnlessDirective } from '../../directives/unless.directive';
   styleUrl: './child.component.css'
 })
 export class ChildComponent {
-  condition:boolean = false;
+  @Input() appUser!:{name:string,age:number,isIndian:boolean};
 }

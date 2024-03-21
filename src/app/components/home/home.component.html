@@ -1,17 +1,18 @@
-<!-- Using Attribute Directive -->
-<div class="container" [ngStyle]="{'background-color':bgColor}">
+<div class="container">
   <div class="row">
     <div class="col">
-      <h3>Parent Container</h3>
+      <app-child *ngFor="let user of applicationUsers" [appUser]="user"></app-child>
     </div>
   </div>
+  <hr/>
   <div class="row">
-    <div class="col-3">
-      <div class="input-group mb-3">
-        <span class="input-group-text">Background color</span>
-        <input type="color" class="form-control" [ngStyle]="{'height':'auto'}" [(ngModel)]="bgColor">
-      </div>
-    </div>  
+    <div class="col">
+      <h3>Using New Syntax - Only Indian Citizens</h3>
+      @for (user of applicationUsers; track $index) {
+        @if(user.isIndian){
+          <app-child [appUser]="user"></app-child>
+        }
+      }
+    </div>
   </div>
-  <app-child></app-child>
 </div>
