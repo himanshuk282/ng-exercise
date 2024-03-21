@@ -1,100 +1,17 @@
-<!-- Data binding code -->
-<div class="container my-2 d-none">
-    <div class="row mb-1">
-        <div class="col">
-            <div class="card">
-                <div class="card-header">
-                  Data Binding
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">{{title}}</h5>
-                  <p class="card-text">{{user.name}} is a {{user.profession}}</p>
-                </div>
-              </div>
-        </div>
-    </div>
-    <div class="row mb-1">
-        <div class="col">
-            <div class="card">
-                <div class="card-header">
-                  Data Binding
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Property Binding</h5>
-                  <p class="card-text">Disabled property of button is toggles using property binding.</p>
-                  <button class="btn btn-primary btn-sm" [disabled]="isDisabled">Click!</button>
-                </div>
-              </div>
-        </div>
-    </div>
-    <div class="row mb-1">
-        <div class="col">
-            <div class="card">
-                <div class="card-header">
-                  Data Binding
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Event Binding</h5>
-                  <p class="card-text">Event triggered on click of the button.</p>
-                  <button class="btn btn-primary btn-sm" (click)="alertUser($event,'start')">Start</button>
-                  <button class="btn btn-danger btn-sm mx-2" (click)="alertUser($event,'stop')">Stop</button>
-                </div>
-              </div>
-        </div>
-    </div>
-    <div class="row mb-1">
-        <div class="col">
-            <div class="card">
-                <div class="card-header">
-                  Data Binding
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Two way Binding</h5>
-                  <div class="input-group mb-3">
-                      <span class="input-group-text">Username</span>
-                      <input type="text" class="form-control" placeholder="Username" [(ngModel)]="username">
-                    </div>
-                    <p class="card-text">User has entered : {{username}}</p>
-                </div>
-              </div>
-        </div>
-    </div>
-</div>
-<!-- Communication between parent and child -->
-<div class="container d-none">
-    <h3>Parent Component</h3>
-    <div class="row">
-        <div class="col">
-            <div class="input-group mb-3">
-                <span class="input-group-text">Send to child</span>
-                <input type="text" class="form-control" placeholder="Data for child" #parentData>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <div class="input-group mb-3">
-                <span class="input-group-text">Message from child</span>
-                <input type="text" class="form-control" [(ngModel)]="messageFromChild">
-            </div>
-        </div>
-    </div>
-    <app-child [messageForChild]="parentData.value" (sendParent)="childSays($event)"></app-child>
-</div>
-<!-- Content projection with ng-content -->
-<div class="container bg-warning p-2 text-dark bg-opacity-10 my-3">
+<!-- Using Attribute Directive -->
+<div class="container" [ngStyle]="{'background-color':bgColor}">
   <div class="row">
     <div class="col">
-      Parent Element
-      <app-child>
-        <div class="container bg-success p-2 text-dark bg-opacity-50">
-          <div class="row">
-            <div class="col">
-              This is an example of content projection. As it is written in parent and shown in child component.
-            </div>
-          </div>
-        </div>
-      </app-child>
+      <h3>Parent Container</h3>
     </div>
   </div>
+  <div class="row">
+    <div class="col-3">
+      <div class="input-group mb-3">
+        <span class="input-group-text">Background color</span>
+        <input type="color" class="form-control" [ngStyle]="{'height':'auto'}" [(ngModel)]="bgColor">
+      </div>
+    </div>  
+  </div>
+  <app-child></app-child>
 </div>

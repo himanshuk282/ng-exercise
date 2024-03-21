@@ -1,22 +1,37 @@
-<div class="d-none">
-    <h4>Child Component</h4>
-    <div class="row">
-        <div class="col">
-            <div class="input-group mb-3">
-                <span class="input-group-text">Send To Parent</span>
-                <input type="text" class="form-control" placeholder="Data for parent" #dataForParent>
-            </div>
-        </div>
+<div class="row">
+    <div class="col">
+        <h3>Child Component</h3>
     </div>
-    <div class="row">
-        <div class="col">
-            <div class="input-group mb-3">
-                <span class="input-group-text">Message from parent</span>
-                <input type="text" class="form-control" [(ngModel)]="fromParent">
-            </div>
-        </div>
-    </div>
-    <button class="btn btn-primary btn-sm" (click)="informParent(dataForParent.value)">Send</button>
-
 </div>
-<ng-content></ng-content>
+<div class="row">
+    <div class="col">
+        <p>Building our custom attribute directive.</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <p appHighlight>Applying Custom Directive to Highlight this line.</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <p>
+            The condition is currently
+            <span [ngClass]="{ 'a': !condition, 'b': condition, 'unless': true }">{{condition}}</span>.
+            <button
+              type="button"
+              (click)="condition = !condition"
+              [ngClass] = "{ 'a': condition, 'b': !condition }" >
+              Toggle condition to {{condition ? 'false' : 'true'}}
+            </button>
+          </p>
+          <p *appUnless="condition">
+            (A) This paragraph is displayed because the condition is false.
+          </p>
+          
+          <p *appUnless="!condition">
+            (B) Although the condition is true,
+            this paragraph is displayed because appUnless is set to false.
+          </p>
+    </div>
+</div>
