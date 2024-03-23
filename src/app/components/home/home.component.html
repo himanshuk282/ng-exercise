@@ -1,18 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <app-child *ngFor="let user of applicationUsers" [appUser]="user"></app-child>
+      <h3>Joke of the day</h3>
+      <h5>Category: {{category | uppercase}}</h5>
     </div>
   </div>
   <hr/>
   <div class="row">
     <div class="col">
-      <h3>Using New Syntax - Only Indian Citizens</h3>
-      @for (user of applicationUsers; track $index) {
-        @if(user.isIndian){
-          <app-child [appUser]="user"></app-child>
-        }
-      }
+      <p>{{joke}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <input type="text" [(ngModel)]="category">
+      <button type="button" class="btn btn-sm btn-primary mx-1" (click)="checkCategory()">Get Joke</button>
+      <button type="button" class="btn btn-sm btn-primary" (click)="getJoke()">Get Random Joke</button>
     </div>
   </div>
 </div>
