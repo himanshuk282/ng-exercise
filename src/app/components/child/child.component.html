@@ -1,12 +1,9 @@
 <div class="list-group">
-    <a class="list-group-item list-group-item-action">
-        <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">{{appUser.name}}</h5>
-            <small>{{appUser.age}} years</small>
-        </div>
-        <p class="mb-1" *ngIf="appUser.isIndian;else notIndian">An Indian Citizen.</p>
-        <ng-template #notIndian>
-            <p class="mb-1">Not an Indian Citizen.Apply for citizenship.</p>
-        </ng-template>
+    <a class="list-group-item list-group-item-action" aria-current="true">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Component : Child</h5>
+      </div>
+      <p class="mb-1">Counter current value: {{stateSvr.getCounter()}}</p>
+      <button type="button" class="btn btn-sm btn-secondary" (click)="raiseCounter()">Increment Counter</button>
     </a>
 </div>

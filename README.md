@@ -7,4 +7,5 @@
 6) Exercise: Demonstrate directives structural and attribute with renderer2,host listener,and host binding.
 7) Exercise: Demonstrate ngIf and ngFor together with practical example.
 8) Exercise: Demonstrate http server calls with example using services.
+9) Exercise: Demonstrate global variable state management using services.
 Commits correspond to each exercises
