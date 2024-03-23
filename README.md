@@ -8,4 +8,6 @@
 7) Exercise: Demonstrate ngIf and ngFor together with practical example.
 8) Exercise: Demonstrate http server calls with example using services.
 9) Exercise: Demonstrate global variable state management using services.
-Commits correspond to each exercises
+10) Exercise: Demonstrate reactive and template driven forms with simple routing.
+
+Note: Commits correspond to each exercises
